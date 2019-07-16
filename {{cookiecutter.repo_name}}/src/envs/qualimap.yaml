@@ -1,0 +1,8 @@
+name: qualimap
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - qualimap = 2.2.2c
+

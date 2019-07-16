@@ -1,0 +1,27 @@
+$schema: "http://json-schema.org/draft-04/schema#"
+
+description: schema for validation of metadata.tsv file
+
+type: object
+
+properties:
+  sample_name:
+    type: string
+    description: sample name for the sample. This will be used for bam/vcf files
+  r1:
+    type: string
+    description: path to FASTQ file
+  r2:
+    type: string
+    description: path to second FASTQ file
+  condition:
+    type: string
+    enum: ["tumor", "normal"]
+  matched_normal:
+    type: string
+    description: The matched normal samples to be used for variant calling
+required:
+  - sample_name
+  - r1
+  - r2
+  - condition

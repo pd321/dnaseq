@@ -1,0 +1,9 @@
+include: "src/common.smk"
+include: "src/align.smk"
+include: "src/somatic.smk"
+include: "src/qc.smk"
+
+rule all:
+	input:
+		"results/qc/multiqc/multiqc_report.html",
+		expand(['results/maf/{tumor}.maf'], tumor = tumor_samples)

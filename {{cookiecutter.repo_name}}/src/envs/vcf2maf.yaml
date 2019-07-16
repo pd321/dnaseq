@@ -1,0 +1,7 @@
+name: vcf2maf
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - vcf2maf = 1.6.17

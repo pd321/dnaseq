@@ -1,0 +1,16 @@
+general:
+  reference: "data/external/ref/genome/genome.fa"
+  intervals: "data/external/ref/other/intervals.bed"
+
+trimgalore:
+  quality: 20
+  stringency: 1
+  e: 0.1
+
+bwa:
+  bwaindex: "data/external/ref/bwaidx/genome.fa"
+
+gatk:
+  knownsites: "data/external/ref/vcf/dbsnp.vcf.gz"
+  germline_resource: "data/external/ref/vcf/dbsnp.vcf.gz"
+  default_af: 0.0000025

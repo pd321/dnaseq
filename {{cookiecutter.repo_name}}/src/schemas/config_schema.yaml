@@ -1,0 +1,54 @@
+$schema: "http://json-schema.org/draft-04/schema#"
+
+description: snakemake configuration file
+
+type: object
+
+properties:
+  general:
+    type: object
+    properties:
+      reference:
+        type: string
+      intervals:
+        type: string
+    required:
+      - reference
+      - intervals
+
+  trimgalore:
+    type: object
+    properties:
+      quality:
+        type: integer
+      stringency:
+        type: integer
+      e:
+        type: number
+    required:
+      - quality
+      - stringency
+      - e
+  bwa:
+    type: object
+    properties:
+      bwaindex:
+        type: string
+  gatk:
+    type: object
+    properties:
+      knownsites:
+        type: string
+      germline_resource:
+        type: string
+      default_af:
+        type: number
+    required:
+      - knownsites
+      - germline_resource
+      - default_af
+
+required:
+  - general
+  - trimgalore
+  - gatk
