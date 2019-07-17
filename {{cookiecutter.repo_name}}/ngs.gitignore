@@ -1,6 +1,4 @@
 # Ignoring large files
-
-# Input
 *.fq.gz
 *.fq
 *.fastq.gz
