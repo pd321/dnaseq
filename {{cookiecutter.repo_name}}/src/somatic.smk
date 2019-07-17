@@ -88,5 +88,4 @@ rule vcf2maf:
         '--vep-forks {threads} '
         '--vcf-tumor-id {wildcards.tumor} '
         '--ref-fasta {params.reference} '
-        '--filter-vcf 0 '
         '--vcf-normal-id {params.normal_sample_name} 2>&1 | tee {log}'
