@@ -2,7 +2,7 @@
 set -euxo pipefail 
 
 # Move gitignore template
-mv .gitignore_template .gitignore
+mv ngs.gitignore .gitignore
 
 # Intitalize a git repository
 git init

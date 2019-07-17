@@ -4,12 +4,14 @@
 *.fq.gz
 *.fq
 *.fastq.gz
-
-# Output
+*.gtf
 *.bam
 *.bai
 *.bw
 *.bdg
+*.fa
+*.vcf
+*.vcf.gz
 
 # Pycharm files
 .idea
