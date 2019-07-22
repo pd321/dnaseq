@@ -6,4 +6,4 @@ include: "src/qc.smk"
 rule all:
 	input:
 		"results/qc/multiqc/multiqc_report.html",
-		expand(['results/maf/{tumor}.maf'], tumor = tumor_samples)
+		expand(['results/vcf/{tumor}_filt.vcf'], tumor = tumor_samples)
