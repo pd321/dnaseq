@@ -13,8 +13,7 @@
 .idea
 
 # Ignore test files
-metadata.tsv
 **/.snakemake
 **/results
-**/data
 **/logs
+**/data/external/ref/bwaidx
