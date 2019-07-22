@@ -21,14 +21,12 @@ install:
   # add additional stuff to setup below
   - conda create -q -n prep bwa
   - source activate prep
-  - mkdir .test/data/external/ref/bwaidx
-  - ln -s .test/data/external/ref/genome/genome.fa .test/data/external/ref/bwaidx/genome.fa
-  - bwa index .test/data/external/ref/bwaidx/genome.fa
+  - bwa index .test/data/external/ref/genome/genome.fa
 
 script:
   - source activate snakemake
   # run the workflow
   # put a test case into the subfolder .test (e.g., use https://github.com/snakemake-workflows/ngs-test-data as a submodule)
-  - cd \{\{cookiecutter.repo_name\}\}/
+  - cd '{{cookiecutter.repo_name}}'
   - snakemake --use-conda --directory ../.test
   - snakemake --directory ../.test --report report.html

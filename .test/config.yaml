@@ -8,7 +8,7 @@ trimgalore:
   e: 0.1
 
 bwa:
-  bwaindex: "data/external/ref/bwaidx/genome.fa"
+  bwaindex: "data/external/ref/genome/genome.fa"
 
 gatk:
   knownsites: "data/external/ref/vcf/dbsnp.vcf.gz"
