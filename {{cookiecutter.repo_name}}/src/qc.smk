@@ -36,4 +36,4 @@ rule multiqc:
 		'multiqc '
 		'--force '
 		'--outdir results/qc/multiqc '
-		'--zip-data-dir . 2>&1 | tee {log}'
+		'--zip-data-dir results logs 2>&1 | tee {log}'
