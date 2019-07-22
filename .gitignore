@@ -8,4 +8,5 @@
 **/.snakemake
 **/results
 **/logs
-**/data/external/ref/bwaidx
+**/data/external/ref/genome/genome.fa.*
+!**/data/external/ref/genome/genome.fa.fai
