@@ -7,3 +7,10 @@ rule all:
 	input:
 		"results/qc/multiqc/multiqc_report.html",
 		expand(['results/vcf/{tumor}_filt.vcf'], tumor = tumor_samples)
+
+onsuccess:
+	shell("command -v telegram-notify && telegram-notify --success --text \'Snakemake:dnaseq:{} Completed\'".format(foldername))
+
+onerror:
+	shell("command -v telegram-notify && telegram-notify --error --text \'Snakemake:dnaseq:{} Failed\'".format(foldername))
+
