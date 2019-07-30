@@ -9,8 +9,8 @@ rule all:
 		expand(['results/vcf/{tumor}_filt.vcf'], tumor = tumor_samples)
 
 onsuccess:
-	shell("command -v telegram-notify && telegram-notify --success --text \'Snakemake:dnaseq:{} Completed\'".format(foldername))
+	shell("if command -v telegram-notify; then telegram-notify --success --text \'Snakemake:dnaseq:{} Completed\'; fi".format(foldername))
 
 onerror:
-	shell("command -v telegram-notify && telegram-notify --error --text \'Snakemake:dnaseq:{} Failed\'".format(foldername))
+	shell("if command -v telegram-notify; then telegram-notify --error --text \'Snakemake:dnaseq:{} Failed\'; fi".format(foldername))
 
