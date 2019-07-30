@@ -1,3 +1,4 @@
+import os
 import pandas as pd
 from snakemake.utils import validate,available_cpu_count
 import datetime
@@ -12,6 +13,7 @@ validate(config, schema="schemas/config_schema.yaml")
 threads_high = available_cpu_count()
 threads_mid = int(threads_high/2)
 threads_low = int(threads_high/4)
+foldername = os.path.basename(os.getcwd())
 
 # Load in metadata
 metadata_file = "metadata.tsv"

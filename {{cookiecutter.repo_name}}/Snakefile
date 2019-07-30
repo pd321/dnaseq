@@ -6,4 +6,11 @@ include: "src/qc.smk"
 rule all:
 	input:
 		"results/qc/multiqc/multiqc_report.html",
-		expand(['results/maf/{tumor}.maf'], tumor = tumor_samples)
+		expand(['results/vcf/{tumor}_filt.vcf'], tumor = tumor_samples)
+
+onsuccess:
+	shell("if command -v telegram-notify; then telegram-notify --success --text \'Snakemake:dnaseq:{} Completed\'; fi".format(foldername))
+
+onerror:
+	shell("if command -v telegram-notify; then telegram-notify --error --text \'Snakemake:dnaseq:{} Failed\'; fi".format(foldername))
+
