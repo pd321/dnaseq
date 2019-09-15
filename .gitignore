@@ -1,20 +1,9 @@
-# Ignore large files
-*.bam
-*.bai
-*.fastq.gz
-*.fq.gz
-*.bw
-*.gtf
-
-# Ignore local
-.local
-
 # Ignore editor files
 .idea
 
 # Ignore test files
-metadata.tsv
 **/.snakemake
 **/results
-**/data
 **/logs
+**/data/external/ref/genome/genome.fa.*
+!**/data/external/ref/genome/genome.fa.fai
